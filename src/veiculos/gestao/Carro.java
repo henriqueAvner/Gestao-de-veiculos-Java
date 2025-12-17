@@ -1,6 +1,6 @@
 package veiculos.gestao;
 
-public class Carro extends Veiculo {
+public class Carro extends Veiculo implements Manutencao {
     private int numeroPortas;
 
 
@@ -18,4 +18,15 @@ public class Carro extends Veiculo {
     void frear() {
         super.frear();
     }
+
+    @Override
+    double calculaCustoViagem(double distanciaKm) {
+        return distanciaKm * 0.50;
+    }
+
+    @Override
+    public String realizarManutencao() {
+        return "Manutenção de 4 pneus e óleo";
+    }
+
 }
